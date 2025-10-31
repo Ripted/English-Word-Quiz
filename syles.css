@@ -1,47 +1,68 @@
+/* Reset some defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f7fa;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f0ff, #f9f9f9);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  min-height: 100vh;
+  color: #333;
 }
 
 .quiz-container {
-  background: white;
-  padding: 20px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 400px;
   text-align: center;
-  width: 350px;
 }
 
 h1 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #0078d7;
 }
 
 #word {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin: 15px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0;
 }
 
 input {
-  padding: 8px;
-  width: 90%;
-  margin-bottom: 10px;
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccd6e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0078d7;
 }
 
 button {
-  padding: 8px 15px;
-  margin: 5px;
+  padding: 0.6rem 1.2rem;
+  margin: 0.3rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   background: #0078d7;
-  color: white;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
 button:hover {
@@ -49,7 +70,15 @@ button:hover {
 }
 
 #feedback {
-  margin-top: 10px;
-  font-weight: bold;
+  margin-top: 0.8rem;
+  font-weight: 600;
+  min-height: 1.2em;
 }
 
+.footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+}
