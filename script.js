@@ -1,3 +1,4 @@
+// --- English words ---
 const words = [
   {en: "abolish", sv: "avskaffa"},
   {en: "abolitionist", sv: "abolitionist, förkämpe för slavhandelns avskaffande"},
@@ -10,7 +11,7 @@ const words = [
   {en: "civil rights", sv: "medborgerliga rättigheter"},
   {en: "civil rights movement", sv: "medborgarrättsrörelsen"},
   {en: "civil war", sv: "inbördeskrig"},
-  {en: "commitment", sv: "engagemang"}, // corrected
+  {en: "commitment", sv: "engagemang"},
   {en: "consequently", sv: "följaktligen"},
   {en: "declare war", sv: "förklara krig"},
   {en: "discover", sv: "upptäcka"},
@@ -40,27 +41,19 @@ const words = [
 ];
 
 let currentWord;
+let score = 0;
 
-function nextWord() {
-  const randomIndex = Math.floor(Math.random() * words.length);
-  currentWord = words[randomIndex];
-  document.getElementById("word").textContent = currentWord.en;
-  document.getElementById("answer").value = "";
-  document.getElementById("feedback").textContent = "";
-}
-
-function checkAnswer() {
-  const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
-  const correctAnswer = currentWord.sv.toLowerCase();
-  
-  if (correctAnswer.includes(userAnswer) && userAnswer !== "") {
-    document.getElementById("feedback").textContent = "✅ Correct!";
-    document.getElementById("feedback").style.color = "green";
-  } else {
-    document.getElementById("feedback").textContent = "❌ Wrong! Correct: " + currentWord.sv;
-    document.getElementById("feedback").style.color = "red";
-  }
-}
-
-window.onload = nextWord;
-
+// --- German questions ---
+const germanQuestions = [
+  {q: "Wie heißt du? (What’s your name?)", a: "Mein Name ist ... / Ich heiße ..."},
+  {q: "Wo wohnst du? (Where do you live?)", a: "Ich wohne in ..."},
+  {q: "Wie alt bist du? (How old are you?)", a: "Ich bin ... Jahre alt"},
+  {q: "Was ist deine Lieblingsfarbe? (What’s your favorite color?)", a: "Meine Lieblingsfarbe ist ..."},
+  {q: "Hast du Geschwister? (Do you have siblings?)", a: "Ja/Nein, ich habe ..."},
+  {q: "Was machst du gern? (What do you like to do?)", a: "Ich mache gern ..."},
+  {q: "Magst du Musik? (Do you like music?)", a: "Ja, ich mag Musik / Nein"},
+  {q: "Was ist dein Lieblingsessen? (What’s your favorite food?)", a: "Mein Lieblingsessen ist ..."},
+  {q: "Welche Sprache sprichst du? (Which language do you speak?)", a: "Ich spreche ..."},
+  {q: "Was bedeutet „Danke“?", a: "Thank you"},
+  {q: "Wie sagt man „Goodbye“ auf Deutsch?", a: "Auf Wiedersehen / Tschüss"},
+  {q: "Was bedeutet „Wie geht’s?“?", a: "
