@@ -2,19 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vocabulary Quiz</title>
+  <title>Quiz Website</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="quiz-container">
-    <h1>English → Swedish Quiz</h1>
-    <p id="word"></p>
-    <input type="text" id="answer" placeholder="Type the Swedish meaning">
-    <button onclick="checkAnswer()">Submit</button>
-    <p id="feedback"></p>
-    <button onclick="nextWord()">Next Word</button>
+  <div class="tabs">
+    <button class="tab-button active" onclick="openTab('english')">English → Swedish</button>
+    <button class="tab-button" onclick="openTab('german')">German Q&A</button>
   </div>
-  <script src="script.js"></script>
+
+  <!-- English Quiz -->
+  <div id="english" class="tab-content active">
+    <div class="quiz-container">
+      <h1>English → Swedish Quiz</h1>
+      <p id="word">Loading…</p>
+      <input type="text" id="answer" placeholder="Type the Swedish meaning">
+      <button id="submitBtn">Submit</button>
+      <p id="feedback"></p>
+      <div class="footer">
+        <button id="nextBtn">Next word</button>
+        <span>Score: <span id="score">0</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- German Quiz -->
+  <div id="german" class="tab-content">
+    <div class="quiz-container">
+      <h1>German Questions Quiz</h1>
+      <p id="german-question">Loading…</p>
+      <input type="text" id="german-answer" placeholder="Type your answer">
+      <button id="german-submitBtn">Submit</button>
+      <p id="german-feedback"></p>
+      <div class="footer">
+        <button id="german-nextBtn">Next question</button>
+        <span>Score: <span id="german-score">0</span></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
-
