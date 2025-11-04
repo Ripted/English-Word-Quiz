@@ -1,4 +1,3 @@
-// --- English words ---
 const words = [
   {en: "abolish", sv: "avskaffa"},
   {en: "abolitionist", sv: "abolitionist, förkämpe för slavhandelns avskaffande"},
