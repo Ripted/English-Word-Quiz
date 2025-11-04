@@ -1,84 +1,33 @@
-/* Reset some defaults */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(135deg, #e0f0ff, #f9f9f9);
+.tabs {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  color: #333;
-}
-
-.quiz-container {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-}
-
-h1 {
-  font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #0078d7;
 }
 
-#word {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 1rem 0;
-}
-
-input {
-  width: 100%;
-  padding: 0.7rem;
-  border: 1px solid #ccd6e0;
-  border-radius: 6px;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  transition: border-color 0.2s;
-}
-
-input:focus {
-  outline: none;
-  border-color: #0078d7;
-}
-
-button {
-  padding: 0.6rem 1.2rem;
-  margin: 0.3rem;
+.tab-button {
+  flex: 1;
+  padding: 0.8rem;
   border: none;
-  border-radius: 6px;
-  background: #0078d7;
-  color: #fff;
-  font-size: 0.95rem;
-  font-weight: 600;
+  background: #e0e7ef;
   cursor: pointer;
+  font-weight: 600;
   transition: background 0.2s;
 }
 
-button:hover {
+.tab-button.active {
+  background: #0078d7;
+  color: #fff;
+}
+
+.tab-button:hover {
   background: #005a9e;
+  color: #fff;
 }
 
-#feedback {
-  margin-top: 0.8rem;
-  font-weight: 600;
-  min-height: 1.2em;
+.tab-content {
+  display: none;
 }
 
-.footer {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  color: #555;
+.tab-content.active {
+  display: block;
 }
