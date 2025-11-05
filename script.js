@@ -1,3 +1,4 @@
+// Data: English -> Swedish
 const words = [
   {en: "abolish", sv: "avskaffa"},
   {en: "abolitionist", sv: "abolitionist, förkämpe för slavhandelns avskaffande"},
@@ -39,10 +40,7 @@ const words = [
   {en: "taxes", sv: "skatter"}
 ];
 
-let currentWord;
-let score = 0;
-
-// --- German questions ---
+// Data: German Q&A
 const germanQuestions = [
   {q: "Wie heißt du? (What’s your name?)", a: "Mein Name ist ... / Ich heiße ..."},
   {q: "Wo wohnst du? (Where do you live?)", a: "Ich wohne in ..."},
@@ -55,4 +53,32 @@ const germanQuestions = [
   {q: "Welche Sprache sprichst du? (Which language do you speak?)", a: "Ich spreche ..."},
   {q: "Was bedeutet „Danke“?", a: "Thank you"},
   {q: "Wie sagt man „Goodbye“ auf Deutsch?", a: "Auf Wiedersehen / Tschüss"},
-  {q: "Was bedeutet „Wie geht’s?“?", a: "
+  {q: "Was bedeutet „Wie geht’s?“?", a: "How are you?"},
+  {q: "Was ist die deutsche Zahl für „drei“?", a: "drei"},
+  {q: "Was bedeutet „Entschuldigung“?", a: "Sorry / Excuse me"},
+  {q: "Wie sagt man „My name is…“ auf Deutsch?", a: "Mein Name ist ... / Ich heiße ..."}
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Tabs
+  const tabButtons = Array.from(document.querySelectorAll(".tab-button"));
+  const tabContents = Array.from(document.querySelectorAll(".tab-content"));
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = btn.getAttribute("data-tab");
+      // Toggle active button
+      tabButtons.forEach(b => b.classList.toggle("active", b === btn));
+      // Toggle content
+      tabContents.forEach(c => c.classList.toggle("active", c.id === target));
+    });
+  });
+
+  // English quiz
+  let currentWord = null;
+  let score = 0;
+
+  const wordEl = document.getElementById("word");
+  const answerEl = document.getElementById("answer");
+  const feedbackEl = document.getElementById("feedback");
+  const scoreEl = document.getElementById("score
