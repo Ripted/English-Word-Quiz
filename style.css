@@ -1,3 +1,4 @@
+/* Layout */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: linear-gradient(135deg, #e0f0ff, #f9f9f9);
@@ -8,11 +9,14 @@ body {
   margin: 0;
 }
 
+/* Tabs */
 .tabs {
   display: flex;
   width: 100%;
-  max-width: 400px;
+  max-width: 560px;
   margin-top: 1rem;
+  gap: 6px;
+  padding: 0 12px;
 }
 
 .tab-button {
@@ -22,7 +26,8 @@ body {
   background: #e0e7ef;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.2s;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
 }
 
 .tab-button.active {
@@ -38,26 +43,27 @@ body {
 .tab-content {
   display: none;
   width: 100%;
-  max-width: 400px;
+  max-width: 560px;
+  padding: 12px;
 }
 
 .tab-content.active {
   display: block;
 }
 
+/* Card */
 .quiz-container {
   background: #fff;
-  padding: 2rem;
+  padding: 1.6rem;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   text-align: center;
-  margin-top: 1rem;
 }
 
 h1 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #0078d7;
+  color: #0b5fb8;
 }
 
 #word, #german-question {
@@ -70,42 +76,51 @@ input {
   width: 100%;
   padding: 0.7rem;
   border: 1px solid #ccd6e0;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 input:focus {
   outline: none;
-  border-color: #0078d7;
+  border-color: #0b5fb8;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 0.4rem;
 }
 
 button {
   padding: 0.6rem 1.2rem;
-  margin: 0.3rem;
   border: none;
-  border-radius: 6px;
-  background: #0078d7;
+  border-radius: 8px;
+  background: #0b5fb8;
   color: #fff;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
 button:hover {
-  background: #005a9e;
+  background: #084d96;
 }
 
+/* Feedback and footer */
 #feedback, #german-feedback {
-  margin-top: 0.8rem;
+  margin-top: 0.6rem;
   font-weight: 600;
   min-height: 1.2em;
 }
 
 .footer {
-  margin-top: 1rem;
+  margin-top: 0.6rem;
   display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
+  justify-content: flex-end;
+  font-size: 0.95rem;
   color: #555;
 }
