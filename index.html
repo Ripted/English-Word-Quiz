@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Quiz Website</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="tabs">
-    <button class="tab-button active" onclick="openTab('english')">English → Swedish</button>
-    <button class="tab-button" onclick="openTab('german')">German Q&A</button>
-  </div>
+  <nav class="tabs">
+    <button class="tab-button active" data-tab="english">English → Swedish</button>
+    <button class="tab-button" data-tab="german">German Q&A</button>
+  </nav>
 
   <!-- English Quiz -->
-  <div id="english" class="tab-content active">
+  <section id="english" class="tab-content active">
     <div class="quiz-container">
       <h1>English → Swedish Quiz</h1>
       <p id="word">Loading…</p>
-      <input type="text" id="answer" placeholder="Type the Swedish meaning">
-      <button id="submitBtn">Submit</button>
+      <input type="text" id="answer" placeholder="Type the Swedish meaning" autocomplete="off" />
+      <div class="actions">
+        <button id="submitBtn">Submit</button>
+        <button id="nextBtn">Next word</button>
+      </div>
       <p id="feedback"></p>
       <div class="footer">
-        <button id="nextBtn">Next word</button>
         <span>Score: <span id="score">0</span></span>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- German Quiz -->
-  <div id="german" class="tab-content">
+  <section id="german" class="tab-content">
     <div class="quiz-container">
       <h1>German Questions Quiz</h1>
       <p id="german-question">Loading…</p>
-      <input type="text" id="german-answer" placeholder="Type your answer">
-      <button id="german-submitBtn">Submit</button>
+      <input type="text" id="german-answer" placeholder="Type your answer" autocomplete="off" />
+      <div class="actions">
+        <button id="german-submitBtn">Submit</button>
+        <button id="german-nextBtn">Next question</button>
+      </div>
       <p id="german-feedback"></p>
       <div class="footer">
-        <button id="german-nextBtn">Next question</button>
         <span>Score: <span id="german-score">0</span></span>
       </div>
     </div>
-  </div>
+  </section>
 
   <script src="script.js" defer></script>
 </body>
